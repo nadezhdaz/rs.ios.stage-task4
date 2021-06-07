@@ -7,9 +7,7 @@ final class FillWithColor {
             return image
         }
         
-        let isImageAlreadyPainted = image.allSatisfy{ $0 == image.first && $0.allSatisfy{ $0 == newColor} }
-        
-        if image.count < 1 || row < 0 || row >= image.count || row > 50 || column < 0 || columns.count < 1 || column >= columns.count || newColor >= 65536 || image[row][column] < 0 || isImageAlreadyPainted {
+        if image.count < 1 || row < 0 || row >= image.count || row > 50 || column < 0 || columns.count > 50 || columns.count < 1 || column >= columns.count || newColor >= 65536 {
             return image
         }
         
@@ -30,4 +28,5 @@ final class FillWithColor {
         
         return pixelsToBeColored
     }
+    
 }
